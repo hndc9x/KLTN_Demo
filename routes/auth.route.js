@@ -100,4 +100,18 @@ router.post(
 );
 
 
+// @route   POST api/user/login
+// @desc    Login user
+// @access  Public
+router.post('/login',[
+  // Validation for email and password
+  check('email','please include a valid email').isEmail(),
+  check('password','password is required').exists()
+],async(req,res)=>{
+  const errors = validationResult(req);
+  if(!errors.isEmpty()){
+    
+  }
+})
+
 module.exports = router 
